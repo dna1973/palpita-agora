@@ -1,93 +1,67 @@
-import { useState } from "react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { LogIn, UserPlus, Mail, Lock, User, Eye, EyeOff } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LogIn, UserPlus, Mail, Lock, User, Eye, EyeOff } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 interface AuthModalProps {
-  open: boolean
-  onOpenChange: (open: boolean) => void
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
 export function AuthModal({ open, onOpenChange }: AuthModalProps) {
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const { toast } = useToast()
+  const { signIn, signUp } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: ""
-  })
+  });
 
   const [signupForm, setSignupForm] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: ""
-  })
+  });
 
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    setIsLoading(true);
     
-    try {
-      // TODO: Implement Supabase login
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
-      
-      toast({
-        title: "Login realizado!",
-        description: "Bem-vindo de volta ao Palpita Agora!",
-      })
-      
-      onOpenChange(false)
-    } catch (error) {
-      toast({
-        title: "Erro no login",
-        description: "Verifique suas credenciais e tente novamente.",
-        variant: "destructive"
-      })
-    } finally {
-      setIsLoading(false)
+    const { error } = await signIn(loginForm.email, loginForm.password);
+    
+    if (!error) {
+      onOpenChange(false);
+      setLoginForm({ email: "", password: "" });
     }
-  }
+    
+    setIsLoading(false);
+  };
 
   const handleSignup = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
 
     if (signupForm.password !== signupForm.confirmPassword) {
-      toast({
-        title: "Erro no cadastro",
-        description: "As senhas não coincidem.",
-        variant: "destructive"
-      })
-      setIsLoading(false)
-      return
+      setIsLoading(false);
+      return;
     }
     
-    try {
-      // TODO: Implement Supabase signup
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
-      
-      toast({
-        title: "Cadastro realizado!",
-        description: "Sua conta foi criada com sucesso. Bem-vindo ao Palpita Agora!",
-      })
-      
-      onOpenChange(false)
-    } catch (error) {
-      toast({
-        title: "Erro no cadastro",
-        description: "Não foi possível criar sua conta. Tente novamente.",
-        variant: "destructive"
-      })
-    } finally {
-      setIsLoading(false)
+    setIsLoading(true);
+    
+    const { error } = await signUp(signupForm.email, signupForm.password, signupForm.username);
+    
+    if (!error) {
+      onOpenChange(false);
+      setSignupForm({ username: "", email: "", password: "", confirmPassword: "" });
     }
-  }
+    
+    setIsLoading(false);
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -253,5 +227,5 @@ export function AuthModal({ open, onOpenChange }: AuthModalProps) {
         </Tabs>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
