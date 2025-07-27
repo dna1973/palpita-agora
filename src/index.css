@@ -8,35 +8,35 @@
 @layer base {
   :root {
     /* Base Colors - Light Mode */
-    --background: 249 250 251; /* #F9FAFB */
-    --foreground: 17 24 39; /* #111827 */
+    --background: 248 250 252; /* #F8FAFC - Azul muito claro */
+    --foreground: 15 23 42; /* #0F172A - Azul escuro */
 
-    --card: 255 255 255; /* Pure white */
-    --card-foreground: 17 24 39;
+    --card: 255 255 255; /* Branco puro */
+    --card-foreground: 15 23 42;
 
     --popover: 255 255 255;
-    --popover-foreground: 17 24 39;
+    --popover-foreground: 15 23 42;
 
-    /* Primary Colors - Modern Blue */
-    --primary: 59 130 246; /* #3B82F6 */
+    /* Primary Colors - Azul oceano vibrante */
+    --primary: 37 99 235; /* #2563EB - Azul profundo */
     --primary-foreground: 255 255 255;
-    --primary-glow: 147 197 253; /* #93C5FD */
+    --primary-glow: 96 165 250; /* #60A5FA - Azul claro */
 
-    /* Secondary Colors */
-    --secondary: 241 245 249; /* #F1F5F9 */
-    --secondary-foreground: 15 23 42; /* #0F172A */
+    /* Secondary Colors - Verde água */
+    --secondary: 6 182 212; /* #06B6D4 - Ciano/turquesa */
+    --secondary-foreground: 255 255 255;
 
-    /* Success Colors - Modern Green */
-    --success: 16 185 129; /* #10B981 */
+    /* Success Colors - Verde esmeralda */
+    --success: 5 150 105; /* #059669 - Verde esmeralda */
     --success-foreground: 255 255 255;
-    --success-glow: 110 231 183; /* #6EE7B7 */
+    --success-glow: 52 211 153; /* #34D399 - Verde claro */
 
     /* Muted Colors */
-    --muted: 248 250 252; /* #F8FAFC */
-    --muted-foreground: 100 116 139; /* #64748B */
+    --muted: 241 245 249; /* #F1F5F9 - Azul acinzentado claro */
+    --muted-foreground: 71 85 105; /* #475569 - Azul acinzentado */
 
-    /* Accent Colors */
-    --accent: 59 130 246; /* Same as primary */
+    /* Accent Colors - Verde-azulado */
+    --accent: 14 165 233; /* #0EA5E9 - Azul céu */
     --accent-foreground: 255 255 255;
 
     /* Destructive Colors */
@@ -44,77 +44,71 @@
     --destructive-foreground: 255 255 255;
 
     /* Border & Input */
-    --border: 226 232 240; /* #E2E8F0 */
-    --input: 226 232 240;
-    --ring: 59 130 246; /* Primary blue */
+    --border: 203 213 225; /* #CBD5E1 - Azul acinzentado claro */
+    --input: 203 213 225;
+    --ring: 37 99 235; /* Primary blue */
 
     /* Glass Effect */
-    --glass-bg: 255 255 255 / 0.1;
-    --glass-border: 255 255 255 / 0.2;
+    --glass-bg: 37 99 235 / 0.1; /* Azul com transparência */
+    --glass-border: 6 182 212 / 0.2; /* Ciano com transparência */
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--success)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    /* Gradients - Azul para verde */
+    --gradient-primary: linear-gradient(135deg, hsl(37 99% 73%), hsl(96 165 250));
+    --gradient-success: linear-gradient(135deg, hsl(5 150 105), hsl(52 211 153));
+    --gradient-hero: linear-gradient(135deg, hsl(37 99% 73%), hsl(5 150 105));
+    --gradient-ocean: linear-gradient(135deg, hsl(37 99% 73%), hsl(6 182 212));
+    --gradient-card: linear-gradient(145deg, hsl(255 255 255), hsl(241 245 249));
 
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-    --shadow-card: 0 4px 20px -2px hsl(var(--foreground) / 0.1);
+    /* Shadows com tons azuis/verdes */
+    --shadow-elegant: 0 10px 30px -10px hsl(37 99% 73% / 0.3);
+    --shadow-glow: 0 0 40px hsl(6 182 212 / 0.4);
+    --shadow-card: 0 4px 20px -2px hsl(37 99% 73% / 0.1);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 248 250 252;
+    --sidebar-foreground: 15 23 42;
+    --sidebar-primary: 37 99 235;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 241 245 249;
+    --sidebar-accent-foreground: 15 23 42;
+    --sidebar-border: 203 213 225;
+    --sidebar-ring: 37 99 235;
   }
 
   .dark {
-    /* Base Colors - Dark Mode */
-    --background: 17 24 39; /* #111827 slate-900 */
+    /* Base Colors - Dark Mode com azuis profundos */
+    --background: 2 6 23; /* #020617 - Azul noturno profundo */
     --foreground: 248 250 252; /* #F8FAFC */
 
-    --card: 30 41 59; /* #1E293B slate-800 */
+    --card: 15 23 42; /* #0F172A - Azul escuro */
     --card-foreground: 248 250 252;
 
-    --popover: 30 41 59;
+    --popover: 15 23 42;
     --popover-foreground: 248 250 252;
 
-    /* Primary Colors - Bright Blue in dark */
-    --primary: 59 130 246; /* #3B82F6 */
+    /* Primary Colors - Azul brilhante no escuro */
+    --primary: 59 130 246; /* #3B82F6 - Azul vibrante */
     --primary-foreground: 255 255 255;
-    --primary-glow: 147 197 253;
+    --primary-glow: 96 165 250;
 
-    /* Secondary Colors */
-    --secondary: 51 65 85; /* #334155 slate-700 */
-    --secondary-foreground: 248 250 252;
+    /* Secondary Colors - Ciano brilhante */
+    --secondary: 6 182 212; /* #06B6D4 - Ciano */
+    --secondary-foreground: 255 255 255;
 
-    /* Success Colors */
-    --success: 16 185 129; /* #10B981 */
+    /* Success Colors - Verde esmeralda brilhante */
+    --success: 16 185 129; /* #10B981 - Verde esmeralda */
     --success-foreground: 255 255 255;
-    --success-glow: 110 231 183;
+    --success-glow: 52 211 153;
 
     /* Muted Colors */
-    --muted: 51 65 85; /* #334155 */
+    --muted: 30 41 59; /* #1E293B - Azul escuro */
     --muted-foreground: 148 163 184; /* #94A3B8 */
 
-    /* Accent Colors */
-    --accent: 59 130 246;
+    /* Accent Colors - Azul céu brilhante */
+    --accent: 14 165 233; /* #0EA5E9 */
     --accent-foreground: 255 255 255;
 
     /* Destructive Colors */
@@ -122,21 +116,22 @@
     --destructive-foreground: 255 255 255;
 
     /* Border & Input */
-    --border: 71 85 105; /* #475569 slate-600 */
-    --input: 71 85 105;
+    --border: 51 65 85; /* #334155 - Azul acinzentado */
+    --input: 51 65 85;
     --ring: 59 130 246;
 
-    /* Glass Effect for Dark Mode */
-    --glass-bg: 0 0 0 / 0.3;
-    --glass-border: 255 255 255 / 0.1;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Glass Effect para Dark Mode com azul/verde */
+    --glass-bg: 6 182 212 / 0.1; /* Ciano com transparência */
+    --glass-border: 59 130 246 / 0.2; /* Azul com transparência */
+    
+    --sidebar-background: 15 23 42;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 59 130 246;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 30 41 59;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 59 130 246;
   }
 }
 
@@ -159,17 +154,19 @@
     border-color: hsl(var(--glass-border));
   }
 
-  /* Premium Button Variants */
+  /* Premium Button Variants com gradientes azul-verde */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-success text-white font-semibold px-8 py-4 rounded-lg;
+    background: var(--gradient-hero);
+    @apply text-white font-semibold px-8 py-4 rounded-lg;
     @apply hover:scale-105 hover:shadow-glow transition-all duration-300;
     @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
   }
 
   .btn-premium {
-    @apply bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg;
-    @apply hover:bg-primary/90 hover:scale-105 hover:shadow-elegant transition-all duration-300;
-    @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+    background: var(--gradient-ocean);
+    @apply text-white font-medium px-6 py-3 rounded-lg;
+    @apply hover:scale-105 hover:shadow-elegant transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-secondary/50;
   }
 
   /* Card Variants */
@@ -196,7 +193,7 @@
     animation: scaleIn 0.5s ease-out forwards;
   }
 
-  /* Text Gradients */
+  /* Text Gradients com tons oceânicos */
   .text-gradient {
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -205,7 +202,14 @@
   }
 
   .text-gradient-primary {
-    background: var(--gradient-primary);
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-ocean {
+    background: linear-gradient(135deg, hsl(37 99% 73%), hsl(6 182 212));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
