@@ -154,7 +154,9 @@
 @layer components {
   /* Glass Effect Components */
   .glass {
-    @apply backdrop-blur-xl bg-glass-bg border border-glass-border;
+    @apply backdrop-blur-xl border;
+    background: hsl(var(--glass-bg));
+    border-color: hsl(var(--glass-border));
   }
 
   /* Premium Button Variants */
