@@ -1,139 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* ===================================
+   PALPITA AGORA - MODERN CSS SYSTEM
+   Clean, Fast, Scalable
+   =================================== */
+
+@import './styles/design-tokens.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Modern Sports Betting Platform Design System */
-@layer base {
-  :root {
-    /* Base Colors - Light Mode */
-    --background: 248 250 252; /* #F8FAFC - Azul muito claro */
-    --foreground: 15 23 42; /* #0F172A - Azul escuro */
-
-    --card: 255 255 255; /* Branco puro */
-    --card-foreground: 15 23 42;
-
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
-
-    /* Primary Colors - Azul oceano vibrante */
-    --primary: 37 99 235; /* #2563EB - Azul profundo */
-    --primary-foreground: 255 255 255;
-    --primary-glow: 96 165 250; /* #60A5FA - Azul claro */
-
-    /* Secondary Colors - Verde água */
-    --secondary: 6 182 212; /* #06B6D4 - Ciano/turquesa */
-    --secondary-foreground: 255 255 255;
-
-    /* Success Colors - Verde esmeralda */
-    --success: 5 150 105; /* #059669 - Verde esmeralda */
-    --success-foreground: 255 255 255;
-    --success-glow: 52 211 153; /* #34D399 - Verde claro */
-
-    /* Muted Colors */
-    --muted: 241 245 249; /* #F1F5F9 - Azul acinzentado claro */
-    --muted-foreground: 71 85 105; /* #475569 - Azul acinzentado */
-
-    /* Accent Colors - Verde-azulado */
-    --accent: 14 165 233; /* #0EA5E9 - Azul céu */
-    --accent-foreground: 255 255 255;
-
-    /* Destructive Colors */
-    --destructive: 239 68 68; /* #EF4444 */
-    --destructive-foreground: 255 255 255;
-
-    /* Border & Input */
-    --border: 203 213 225; /* #CBD5E1 - Azul acinzentado claro */
-    --input: 203 213 225;
-    --ring: 37 99 235; /* Primary blue */
-
-    /* Glass Effect */
-    --glass-bg: 37 99 235 / 0.1; /* Azul com transparência */
-    --glass-border: 6 182 212 / 0.2; /* Ciano com transparência */
-
-    /* Gradients - Azul para verde */
-    --gradient-primary: linear-gradient(135deg, hsl(37 99% 73%), hsl(96 165 250));
-    --gradient-success: linear-gradient(135deg, hsl(5 150 105), hsl(52 211 153));
-    --gradient-hero: linear-gradient(135deg, hsl(37 99% 73%), hsl(5 150 105));
-    --gradient-ocean: linear-gradient(135deg, hsl(37 99% 73%), hsl(6 182 212));
-    --gradient-card: linear-gradient(145deg, hsl(255 255 255), hsl(241 245 249));
-
-    /* Shadows com tons azuis/verdes */
-    --shadow-elegant: 0 10px 30px -10px hsl(37 99% 73% / 0.3);
-    --shadow-glow: 0 0 40px hsl(6 182 212 / 0.4);
-    --shadow-card: 0 4px 20px -2px hsl(37 99% 73% / 0.1);
-
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --radius: 0.75rem;
-
-    --sidebar-background: 248 250 252;
-    --sidebar-foreground: 15 23 42;
-    --sidebar-primary: 37 99 235;
-    --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 241 245 249;
-    --sidebar-accent-foreground: 15 23 42;
-    --sidebar-border: 203 213 225;
-    --sidebar-ring: 37 99 235;
-  }
-
-  .dark {
-    /* Base Colors - Dark Mode com azuis profundos */
-    --background: 2 6 23; /* #020617 - Azul noturno profundo */
-    --foreground: 248 250 252; /* #F8FAFC */
-
-    --card: 15 23 42; /* #0F172A - Azul escuro */
-    --card-foreground: 248 250 252;
-
-    --popover: 15 23 42;
-    --popover-foreground: 248 250 252;
-
-    /* Primary Colors - Azul brilhante no escuro */
-    --primary: 59 130 246; /* #3B82F6 - Azul vibrante */
-    --primary-foreground: 255 255 255;
-    --primary-glow: 96 165 250;
-
-    /* Secondary Colors - Ciano brilhante */
-    --secondary: 6 182 212; /* #06B6D4 - Ciano */
-    --secondary-foreground: 255 255 255;
-
-    /* Success Colors - Verde esmeralda brilhante */
-    --success: 16 185 129; /* #10B981 - Verde esmeralda */
-    --success-foreground: 255 255 255;
-    --success-glow: 52 211 153;
-
-    /* Muted Colors */
-    --muted: 30 41 59; /* #1E293B - Azul escuro */
-    --muted-foreground: 148 163 184; /* #94A3B8 */
-
-    /* Accent Colors - Azul céu brilhante */
-    --accent: 14 165 233; /* #0EA5E9 */
-    --accent-foreground: 255 255 255;
-
-    /* Destructive Colors */
-    --destructive: 239 68 68; /* #EF4444 */
-    --destructive-foreground: 255 255 255;
-
-    /* Border & Input */
-    --border: 51 65 85; /* #334155 - Azul acinzentado */
-    --input: 51 65 85;
-    --ring: 59 130 246;
-
-    /* Glass Effect para Dark Mode com azul/verde */
-    --glass-bg: 6 182 212 / 0.1; /* Ciano com transparência */
-    --glass-border: 59 130 246 / 0.2; /* Azul com transparência */
-    
-    --sidebar-background: 15 23 42;
-    --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 59 130 246;
-    --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 30 41 59;
-    --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 51 65 85;
-    --sidebar-ring: 59 130 246;
-  }
-}
 
 @layer base {
   * {
@@ -141,101 +15,56 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    transition: background-color var(--transition-fast);
+  }
+  
+  /* Smooth theme transitions */
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-fast);
   }
 }
 
 @layer components {
-  /* Glass Effect Components */
+  /* ===== MODERN COMPONENT STYLES ===== */
+  
+  /* Glass Effect - Subtle and Modern */
   .glass {
-    @apply backdrop-blur-xl border;
-    background: hsl(var(--glass-bg));
-    border-color: hsl(var(--glass-border));
+    @apply backdrop-blur-sm border;
+    background: rgb(var(--background) / 0.8);
+    border-color: rgb(var(--border) / 0.5);
   }
 
-  /* Premium Button Variants com gradientes azul-verde */
-  .btn-hero {
-    background: var(--gradient-hero);
-    @apply text-white font-semibold px-8 py-4 rounded-lg;
-    @apply hover:scale-105 hover:shadow-glow transition-all duration-300;
-    @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+  /* Text Gradient - Brand Only */
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .btn-premium {
-    background: var(--gradient-ocean);
-    @apply text-white font-medium px-6 py-3 rounded-lg;
-    @apply hover:scale-105 hover:shadow-elegant transition-all duration-300;
-    @apply focus:outline-none focus:ring-2 focus:ring-secondary/50;
-  }
-
-  /* Card Variants */
-  .card-elegant {
-    @apply bg-card border border-border rounded-xl shadow-card;
-    @apply hover:shadow-elegant hover:scale-[1.02] transition-all duration-300;
-  }
-
-  .card-glass {
-    @apply glass rounded-xl shadow-lg;
-    @apply hover:shadow-glow transition-all duration-300;
-  }
-
-  /* Animation Classes */
+  /* Animation Classes - Subtle */
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.4s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
+    animation: slideUp 0.5s ease-out forwards;
   }
 
   .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-
-  /* Text Gradients com tons oceânicos */
-  .text-gradient {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-primary {
-    background: var(--gradient-ocean);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-ocean {
-    background: linear-gradient(135deg, hsl(37 99% 73%), hsl(6 182 212));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    animation: scaleIn 0.3s ease-out forwards;
   }
 }
 
-@layer utilities {
-  /* Custom shadows */
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
-  }
-  
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-}
-
-/* Keyframes for animations */
+/* ===== KEYFRAMES - Minimal and Fast ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -246,7 +75,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -257,7 +86,7 @@
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;

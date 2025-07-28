@@ -69,11 +69,11 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">
+            <span className="text-gradient-brand">
               Funcionalidades Exclusivas
             </span>
           </h2>
@@ -87,15 +87,15 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card-elegant p-6 group animate-fade-in"
+              className="bg-card p-6 rounded-xl shadow-soft hover:shadow-medium transition-normal group animate-fade-in border"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start space-x-4">
-                <div className={`flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-${feature.color.split('-')[1]}/10 to-${feature.color.split('-')[1]}/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className={`h-6 w-6 ${feature.color}`} />
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-success-500/10 flex items-center justify-center group-hover:scale-110 transition-fast">
+                  <feature.icon className="h-6 w-6 text-success" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-success transition-fast">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -109,9 +109,9 @@ export function FeaturesSection() {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3">
-            <Trophy className="h-5 w-5 text-primary" />
-            <span className="text-primary font-medium">
+          <div className="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/20 rounded-full px-6 py-3">
+            <Trophy className="h-5 w-5 text-brand-600" />
+            <span className="text-brand-600 font-medium">
               Pronto para começar a ganhar?
             </span>
           </div>

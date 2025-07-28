@@ -1,0 +1,204 @@
+/* ===================================
+   PALPITA AGORA - DESIGN TOKENS 2024
+   Sistema de Cores Moderno e Minimalista
+   =================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================
+   CORE COLOR SYSTEM
+   =================================== */
+
+:root {
+  /* ===== NEUTRAL COLORS - Base System ===== */
+  --neutral-0: 255 255 255;      /* Pure White */
+  --neutral-50: 250 250 250;     /* Off White */
+  --neutral-100: 245 245 245;    /* Light Gray */
+  --neutral-200: 229 229 229;    /* Border Gray */
+  --neutral-300: 212 212 212;    /* Subtle Gray */
+  --neutral-400: 163 163 163;    /* Muted Gray */
+  --neutral-500: 115 115 115;    /* Text Gray */
+  --neutral-600: 82 82 82;       /* Dark Gray */
+  --neutral-700: 64 64 64;       /* Darker Gray */
+  --neutral-800: 38 38 38;       /* Almost Black */
+  --neutral-900: 23 23 23;       /* True Black */
+
+  /* ===== BRAND COLORS - Sports Energy ===== */
+  --brand-50: 240 249 255;       /* Sky Tint */
+  --brand-100: 224 242 254;      /* Sky Light */
+  --brand-200: 186 230 253;      /* Sky Lighter */
+  --brand-300: 125 211 252;      /* Sky Medium */
+  --brand-400: 56 189 248;       /* Sky Bright */
+  --brand-500: 14 165 233;       /* Primary Blue */
+  --brand-600: 2 132 199;        /* Brand Core */
+  --brand-700: 3 105 161;        /* Brand Dark */
+  --brand-800: 7 89 133;         /* Brand Darker */
+  --brand-900: 12 74 110;        /* Brand Darkest */
+
+  /* ===== SUCCESS COLORS - Victory Green ===== */
+  --success-50: 240 253 244;     /* Success Tint */
+  --success-100: 220 252 231;    /* Success Light */
+  --success-200: 187 247 208;    /* Success Lighter */
+  --success-300: 134 239 172;    /* Success Medium */
+  --success-400: 74 222 128;     /* Success Bright */
+  --success-500: 34 197 94;      /* Success Core */
+  --success-600: 22 163 74;      /* Success Dark */
+  --success-700: 21 128 61;      /* Success Darker */
+  --success-800: 22 101 52;      /* Success Darkest */
+  --success-900: 20 83 45;       /* Success Deep */
+
+  /* ===== WARNING COLORS - Alert Amber ===== */
+  --warning-50: 255 251 235;     /* Warning Tint */
+  --warning-100: 254 243 199;    /* Warning Light */
+  --warning-200: 253 230 138;    /* Warning Lighter */
+  --warning-300: 252 211 77;     /* Warning Medium */
+  --warning-400: 251 191 36;     /* Warning Bright */
+  --warning-500: 245 158 11;     /* Warning Core */
+  --warning-600: 217 119 6;      /* Warning Dark */
+  --warning-700: 180 83 9;       /* Warning Darker */
+  --warning-800: 146 64 14;      /* Warning Darkest */
+  --warning-900: 120 53 15;      /* Warning Deep */
+
+  /* ===== ERROR COLORS - Alert Red ===== */
+  --error-50: 254 242 242;       /* Error Tint */
+  --error-100: 254 226 226;      /* Error Light */
+  --error-200: 254 202 202;      /* Error Lighter */
+  --error-300: 252 165 165;      /* Error Medium */
+  --error-400: 248 113 113;      /* Error Bright */
+  --error-500: 239 68 68;        /* Error Core */
+  --error-600: 220 38 38;        /* Error Dark */
+  --error-700: 185 28 28;        /* Error Darker */
+  --error-800: 153 27 27;        /* Error Darkest */
+  --error-900: 127 29 29;        /* Error Deep */
+
+  /* ===== SEMANTIC COLORS - Light Mode ===== */
+  --background: var(--neutral-0);
+  --foreground: var(--neutral-900);
+  --muted: var(--neutral-50);
+  --muted-foreground: var(--neutral-500);
+  --card: var(--neutral-0);
+  --card-foreground: var(--neutral-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--neutral-900);
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --primary: var(--brand-600);
+  --primary-foreground: var(--neutral-0);
+  --secondary: var(--neutral-100);
+  --secondary-foreground: var(--neutral-900);
+  --accent: var(--neutral-100);
+  --accent-foreground: var(--neutral-900);
+  --destructive: var(--error-600);
+  --destructive-foreground: var(--neutral-0);
+  --ring: var(--brand-600);
+
+  /* ===== COMPONENT SPECIFIC ===== */
+  --sidebar-background: var(--neutral-0);
+  --sidebar-foreground: var(--neutral-900);
+  --sidebar-primary: var(--brand-600);
+  --sidebar-primary-foreground: var(--neutral-0);
+  --sidebar-accent: var(--neutral-100);
+  --sidebar-accent-foreground: var(--neutral-900);
+  --sidebar-border: var(--neutral-200);
+  --sidebar-ring: var(--brand-600);
+
+  /* ===== DESIGN TOKENS ===== */
+  --radius: 8px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* ===== SHADOWS - Subtle and Modern ===== */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ===== TRANSITIONS - Smooth and Fast ===== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ===== MINIMAL GRADIENTS - Only 2 Strategic ===== */
+  --gradient-brand: linear-gradient(135deg, rgb(var(--brand-600)) 0%, rgb(var(--brand-500)) 100%);
+  --gradient-success: linear-gradient(135deg, rgb(var(--success-600)) 0%, rgb(var(--success-500)) 100%);
+}
+
+/* ===================================
+   DARK MODE - Optimized for OLED
+   =================================== */
+
+.dark {
+  /* ===== SEMANTIC COLORS - Dark Mode ===== */
+  --background: var(--neutral-900);
+  --foreground: var(--neutral-50);
+  --muted: var(--neutral-800);
+  --muted-foreground: var(--neutral-400);
+  --card: var(--neutral-800);
+  --card-foreground: var(--neutral-50);
+  --popover: var(--neutral-800);
+  --popover-foreground: var(--neutral-50);
+  --border: var(--neutral-700);
+  --input: var(--neutral-700);
+  --primary: var(--brand-500);
+  --primary-foreground: var(--neutral-900);
+  --secondary: var(--neutral-800);
+  --secondary-foreground: var(--neutral-50);
+  --accent: var(--neutral-800);
+  --accent-foreground: var(--neutral-50);
+  --destructive: var(--error-500);
+  --destructive-foreground: var(--neutral-50);
+  --ring: var(--brand-500);
+
+  /* ===== COMPONENT SPECIFIC - Dark ===== */
+  --sidebar-background: var(--neutral-800);
+  --sidebar-foreground: var(--neutral-50);
+  --sidebar-primary: var(--brand-500);
+  --sidebar-primary-foreground: var(--neutral-900);
+  --sidebar-accent: var(--neutral-700);
+  --sidebar-accent-foreground: var(--neutral-50);
+  --sidebar-border: var(--neutral-700);
+  --sidebar-ring: var(--brand-500);
+
+  /* ===== SHADOWS - Dark Mode Optimized ===== */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+
+  /* ===== GRADIENTS - Dark Mode ===== */
+  --gradient-brand: linear-gradient(135deg, rgb(var(--brand-500)) 0%, rgb(var(--brand-400)) 100%);
+  --gradient-success: linear-gradient(135deg, rgb(var(--success-500)) 0%, rgb(var(--success-400)) 100%);
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+
+.bg-gradient-brand {
+  background: var(--gradient-brand);
+}
+
+.bg-gradient-success {
+  background: var(--gradient-success);
+}
+
+.text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-subtle { box-shadow: var(--shadow-xs); }
+.shadow-soft { box-shadow: var(--shadow-sm); }
+.shadow-medium { box-shadow: var(--shadow-md); }
+.shadow-strong { box-shadow: var(--shadow-lg); }
+.shadow-dramatic { box-shadow: var(--shadow-xl); }
+
+.transition-fast { transition: all var(--transition-fast); }
+.transition-normal { transition: all var(--transition-normal); }
+.transition-slow { transition: all var(--transition-slow); }
